@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Club</title>
+    <style>
+        /* General Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f4f4;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-container {
+            background: white;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            width: 500px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        textarea {
+            height: 100px;
+            resize: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #45a049;
+        }
+
+        /* Image Upload Styling */
+        .image-upload {
+            margin-bottom: 20px;
+        }
+
+        .image-upload label {
+            font-weight: bold;
+        }
+
+        .image-upload input {
+            border: none;
+            padding: 0;
+        }
+
+        .preview-img {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+    </style>
+    
+</head>
+<body>
+
+<div class="form-container">
+    <h1>Edit Club Details</h1>
+    <form action="/admin/admin-dashboard.html" method="POST" enctype="multipart/form-data">
+
+        <label>Club Name</label>
+        <input type="text" value="SEC" required>
+
+        <label>About Club</label>
+        <textarea required>Student Empowerment Cell is a club focused on skill development and leadership.</textarea>
+
+        <label>Vision</label>
+        <input type="text" value="Empower students through skill enhancement" required>
+
+        <label>Mission</label>
+        <input type="text" value="Develop future leaders" required>
+
+        <label>Objectives</label>
+        <input type="text" value="Organize skill-based events" required>
+
+        <label>Social Media Links</label>
+        <input type="url" value="https://instagram.com/sec" required>
+        <input type="url" value="https://linkedin.com/sec" required>
+
+        <!-- Image Upload Section -->
+        <div class="image-upload">
+            <label>Upload Club Logo</label>
+            <input type="file" accept="image/*" id="fileInput" required onchange="previewImage()">
+            <img id="imagePreview" class="preview-img" src="#" alt="Image Preview" style="display:none;">
+        </div>
+
+        <button type="submit">Save Changes</button>
+    </form>
+</div>
+
+<script>
+    // Preview uploaded image
+    function previewImage() {
+        const file = document.getElementById('fileInput').files[0];
+        const preview = document.getElementById('imagePreview');
+
+        if (file) {
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                preview.src = e.target.result;
+                preview.style.display = 'block';
+            };
+
+            reader.readAsDataURL(file);
+        }
+    }
+</script>
+
+</body>
+</html>

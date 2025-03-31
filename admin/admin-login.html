@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login | Club Management</title>
+    <link rel="stylesheet" href="public/css/style.css">
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background: url('/campus7.jpg') no-repeat center center/cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            width: 420px;
+            text-align: center;
+            transition: 0.5s;
+        }
+
+        .login-container:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            color: #2c2c75;
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            font-weight: bold;
+            margin: 12px 0 5px;
+            color: #555;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            transition: 0.3s;
+            font-size: 14px;
+        }
+
+        input:focus {
+            border-color: #2c2c75;
+            box-shadow: 0 0 8px rgba(44, 44, 117, 0.5);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #2c2c75;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #1e1e50;
+        }
+
+        .form-footer {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .form-footer a {
+            color: #2c2c75;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .form-footer a:hover {
+            color: #FFD700;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .login-container {
+                width: 90%;
+                padding: 30px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h1>Admin Login</h1>
+    
+    <form id="login-form" method="POST" action="admin-dashboard.html" onsubmit="redirectToDashboard(event)">
+        <label>Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter Username" required>
+        
+        <label>Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter Password" required>
+        
+        <button type="submit">LOGIN</button>
+        
+        <div class="form-footer">
+            <a href="forgot-password.html">Forgot Password?</a>
+        </div>
+    </form>
+</div>
+
+<script>
+    // Redirect to Admin Dashboard
+    function redirectToDashboard(event) {
+        event.preventDefault();
+        
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        // Basic validation (replace with DB authentication logic)
+        if (username === "admin" && password === "password") {
+            window.location.href = "admin-dashboard.html";
+        } else {
+            alert("Invalid username or password.");
+        }
+    }
+</script>
+
+</body>
+</html>

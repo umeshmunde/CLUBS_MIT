@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        /* Wrapper for footer positioning */
+        .wrapper {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-content {
+            flex: 1;
+        }
+
+        body {
+            background: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header Styling */
+        header {
+            background: #2c2c75;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Dashboard Layout */
+        .dashboard {
+            padding: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .club-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        /* Club Card Styling */
+        .club-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            width: 280px;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s;
+        }
+
+        .club-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .club-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .club-card h3 {
+            margin: 15px 0 10px;
+            font-size: 20px;
+        }
+
+        .club-card p {
+            color: #666;
+        }
+
+        .club-card a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 25px;
+            color: white;
+            background: #FF5C5C;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .club-card a:hover {
+            background: #E74C4C;
+        }
+
+        /* Floating Add Club Button */
+        .add-club-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #FF5C5C;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 28px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transition: background 0.3s;
+        }
+
+        .add-club-btn:hover {
+            background: #E74C4C;
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #2c2c75;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+
+    <header>
+        <nav>
+            <h1>ADMIN PANEL</h1>
+            <div class="nav-links">
+                <a href="admin-dashboard.html">DASHBOARD</a>
+                <a href="feedback.html">FEEDBACKS</a>
+                <a href="/index.html">LIFE @MIT</a>
+                <a href="#">LOGOUT</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <section class="dashboard">
+            <div class="club-container">
+
+                <!-- CodeChef Club -->
+        <div class="club-card">
+            <a href="/clubs/Codechef.html">
+                <img src="/Images/CodeChef MITAOE CHAPTER.jpg" alt="CodeChef Club">
+                <h3>CodeChef Club</h3>
+            </a>
+        </div>
+
+        <!-- GDSC Club -->
+        <div class="club-card">
+            <a href="/clubs/GDG.html">
+                <img src="/Images/GOOGLE DEVELOPER STUDENT CLUB.png" alt="GDG">
+                <h3>GDG Club</h3>
+            </a>
+        </div>
+
+        <!-- Shutterbug -->
+        <div class="club-card">
+            <a href="/clubs/shutterbug.html">
+                <img src="/Images/shutterbug.png" alt="shutterbug">
+                <h3>Shutterbug Club</h3>
+            </a>
+        </div>
+
+        <div class="club-card">
+            <a href="/clubs/niyudrath.html">
+                <img src="/Images/TEAM NIYUDRATH RACING (TNR) - AUTOSPORTS CLUB.jpg" alt="TNR">
+                <h3>Team Niyudrath Club</h3>
+            </a>
+        </div>
+
+        <div class="club-card">
+            <a href="/clubs/spiritual.html">
+                <img src="/Images/eparatua-mins.png" alt="spirtual">
+                <h3>Spiritual Minds Club</h3>
+            </a>
+        </div>
+
+        <div class="club-card">
+            <a href="">
+                <img src="/Images/girlscript.jpg" alt="gs">
+                <h3>Girlscript Club</h3>
+            </a>
+        </div>
+
+        <div class="club-card">
+            <a href="">
+                <img src="/Images/AALEKH- Art Elated Club.jpg" alt="aalekh">
+                <h3>AALEKH- Art Elated Club</h3>
+            </a>
+        </div>
+
+        
+        <div class="club-card">
+            <a href="">
+                <img src="/Images/foreign-language-club-new.png" alt="foreign">
+                <h3>Foreign Language Club</h3>
+            </a>
+        </div>
+
+        <div class="club-card">
+            <a href="">
+                <img src="/Images/DRAMA CLUB.jpg" alt="drama">
+                <h3>Drama Club</h3>
+            </a>
+        </div>
+
+        <div class="club-card">
+            <a href="">
+                <img src="/Images/goonj.jpg" alt="goonj">
+                <h3>Goonj Club</h3>
+            </a>
+        </div>
+
+        <div class="club-card">
+            <a href="">
+                <img src="/Images/ignitedminds.jpg" alt="ignited">
+                <h3>Ignited MindsClub</h3>
+            </a>
+        </div>
+
+        <div class="club-card">
+            <a href="">
+                <img src="/Images/literaryclub.png" alt="liteary">
+                <h3>Literary Club</h3>
+            </a>
+        </div>
+
+        <div class="club-card">
+            <a href="">
+                <img src="/Images/MITAOE Aero.jpg" alt="aero">
+                <h3>MITAOE Aero Club</h3>
+            </a>
+        </div>
+
+
+            </div>
+
+            <button class="add-club-btn" onclick="window.location.href='create-club.html'">+</button>
+        </section>
+    </div>
+
+    <footer>
+        © 2025 Admin Panel. All rights reserved.
+    </footer>
+
+</div>
+
+</body>
+</html>
